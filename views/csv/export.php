@@ -2,12 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: Pepao
- * Date: 08/05/2019
- * Time: 10:12
+ * Date: 09/05/2019
+ * Time: 13:07
  */
-
 use yii\helpers\Html;
-use yii\helpers\Url;
 use yii2tech\csvgrid\CsvGrid;
 use yii\data\ArrayDataProvider;
 
@@ -21,9 +19,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     //usamos la libreria CsvGrid para convertir los 2 arrays en contenido y cabecera del CSV
     //documentacion aqui: https://packagist.org/packages/yii2tech/csv-grid
-    var_dump($cabecera);
-    echo "<br/><br/><br/>";
-    var_dump($contenido);
 
     $export = new CsvGrid([
         'dataProvider' => new ArrayDataProvider([
@@ -31,6 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ]),
         'columns' => $cabecera, //en columns el array de cabecera
         //para que no nos salga un archivo CSV delimitado por comas, tenemos que configurar las siguientes opciones:
+
         'csvFileConfig' => [
             'cellDelimiter' => ";",
             'rowDelimiter' => "\n",

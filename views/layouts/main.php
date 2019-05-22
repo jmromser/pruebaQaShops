@@ -35,7 +35,7 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'XML', 'url' => ['/xml/aplanamiento']],
-            ['label' => 'CSV', 'url' => ['/site/csv']]
+            ['label' => 'CSV', 'url' => ['/csv/merge']]
         ],
     ]);
     ?>
