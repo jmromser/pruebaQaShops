@@ -11,7 +11,7 @@ class Product
 
         $blockedStockQuantity = $this->ordersQuantity($this->db, $productId, $cacheDuration, $cache);
 
-        $quantity = $this->quantityAvailable($quantityAvailable, $ordersQuantity, $blockedStockQuantity);
+        $quantity = $this->quantityAvailable($quantityAvailable, $ordersQuantity, $blockedStockQuantity, $securityStockConfig);
 
         return 0;
     }
@@ -69,7 +69,7 @@ class Product
         return $blockedStockQuantity;
     }
 
-    public function quantityAvailable ($quantityAvailable, $ordersQuantity, $blockedStockQuantity){
+    public function quantityAvailable ($quantityAvailable, $ordersQuantity, $blockedStockQuantity, $securityStockConfig){
         // Calculamos las unidades disponibles
         if (isset($ordersQuantity) || isset($blockedStockQuantity)) {
             if ($quantityAvailable >= 0) {
